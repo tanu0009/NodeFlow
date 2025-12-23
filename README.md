@@ -1,34 +1,30 @@
 # NodeFlow
+
 NodeFlow – Visual Pipeline Builder
 Contents
 
 Introduction
-
 Run Locally
-
 Features
-
 Tech Stacks & Libraries
-
 Backend APIs
-
 References
 
 Introduction
 
-NodeFlow is a visual pipeline builder that allows users to create workflows using a drag-and-drop, node-based interface.
-The application enables users to connect different types of nodes such as input, text processing, LLM, and output nodes to form structured pipelines.
+NodeFlow is a visual pipeline builder that enables users to design workflows using a drag-and-drop, node-based interface.
+The application allows users to connect different processing nodes such as input, text, LLM, and output nodes to form structured pipelines.
 
-The system also integrates backend validation to analyze the pipeline by counting the number of nodes and edges and verifying whether the pipeline forms a Directed Acyclic Graph (DAG).
-This helps ensure logical correctness and prevents invalid cyclic workflows.
+The system integrates backend validation to analyze the pipeline structure by counting the number of nodes and edges and verifying whether the workflow forms a Directed Acyclic Graph (DAG).
+This ensures logical correctness and prevents invalid cyclic dependencies.
 
-NodeFlow is designed as a simple and intuitive tool to experiment with graph-based workflows and pipeline structures.
+NodeFlow simplifies experimentation with graph-based workflows and provides a clean interface for building and validating pipelines efficiently.
 
 Run Locally
 
-Clone the repository and run the frontend and backend using the following commands.
+Clone the repository in a virtual environment and run the frontend and backend using the following commands:
 
-Frontend Setup
+Frontend
 git clone https://github.com/your-username/nodeflow-visual-pipeline.git
 cd nodeflow-visual-pipeline/frontend
 npm install
@@ -39,7 +35,7 @@ The frontend will run at:
 
 http://localhost:3000
 
-Backend Setup (with Virtual Environment)
+Backend
 cd nodeflow-visual-pipeline/backend
 python -m venv venv
 source venv/bin/activate
@@ -60,9 +56,9 @@ Features
 
 Drag-and-drop node-based workflow editor
 
-Reusable node abstraction for easy extensibility
+Reusable node abstraction for creating new nodes easily
 
-Dynamic Text node that creates input handles from {{variables}}
+Dynamic Text node that generates input handles from {{variables}}
 
 Visual connections between nodes using edges
 
@@ -72,24 +68,24 @@ Count number of nodes
 
 Count number of edges
 
-Check whether the pipeline is a DAG
+Check whether the pipeline forms a DAG
 
 Simple and professional user interface
 
 Tech Stacks & Libraries
 Frontend
 
-React
+ReactJS
+
+Hyper Text Markup Language (HTML)
+
+Cascading Style Sheets (CSS)
 
 JavaScript
 
 React Flow
 
 Zustand
-
-HTML
-
-CSS
 
 Backend
 
@@ -100,31 +96,12 @@ FastAPI
 Uvicorn
 
 Backend APIs
-POST /pipelines/parse
+/pipelines/parse
 
-Description:
-Analyzes the pipeline structure sent from the frontend.
-
-Request Body:
-
-{
-  "nodes": [],
-  "edges": []
-}
-
-
-Response:
-
-{
-  "num_nodes": 4,
-  "num_edges": 3,
-  "is_dag": true
-}
+This API receives pipeline node and edge data from the frontend and returns analysis results including node count, edge count, and DAG validation.
 
 References
 
-React Flow Documentation
 https://reactflow.dev
 
-FastAPI Documentation
 https://fastapi.tiangolo.com
