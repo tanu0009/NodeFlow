@@ -4,101 +4,121 @@ NodeFlow – Visual Pipeline Builder
 Contents
 
 Introduction
-Run Locally
-Features
-Tech Stacks & Libraries
-Backend APIs
+
+Key Highlights
+
+Pipeline Builder
+
+Text Node Logic
+
+Backend Validation
+
+Tech Stacks
+
+Tools Used
+
+How to Run the Project
+
+License
+
 References
 
 Introduction
 
-NodeFlow is a visual pipeline builder that enables users to design workflows using a drag-and-drop, node-based interface.
-The application allows users to connect different processing nodes such as input, text, LLM, and output nodes to form structured pipelines.
+NodeFlow is a visual, node-based pipeline builder that allows users to design workflows using a drag-and-drop interface.
+The project enables users to connect different nodes such as input, text processing, LLM, and output nodes to form structured pipelines.
 
-The system integrates backend validation to analyze the pipeline structure by counting the number of nodes and edges and verifying whether the workflow forms a Directed Acyclic Graph (DAG).
+The system integrates backend validation to analyze the pipeline structure by counting nodes and edges and checking whether the workflow forms a Directed Acyclic Graph (DAG).
 This ensures logical correctness and prevents invalid cyclic dependencies.
 
-NodeFlow simplifies experimentation with graph-based workflows and provides a clean interface for building and validating pipelines efficiently.
+Key Highlights
 
-Run Locally
+Drag-and-Drop Workflow: Create pipelines visually using nodes and connections.
 
-Clone the repository in a virtual environment and run the frontend and backend using the following commands:
+Reusable Node Design: Easy to extend and add new node types.
 
-Frontend
-git clone https://github.com/your-username/nodeflow-visual-pipeline.git
-cd nodeflow-visual-pipeline/frontend
+Dynamic Text Handling: Generates input handles from {{variables}}.
+
+Backend Validation: Verifies DAG structure and pipeline correctness.
+
+Simple UI: Clean, professional, and user-friendly interface.
+
+Pipeline Builder
+
+Visual canvas for building pipelines.
+
+Supports multiple node types such as Input, Text, LLM, and Output.
+
+Connections represent data flow between nodes.
+
+Text Node Logic
+
+Automatically resizes based on input content.
+
+Detects variables wrapped in {{ }}.
+
+Creates dynamic input handles for each detected variable.
+
+Enables flexible data injection into text-based workflows.
+
+Backend Validation
+
+Receives node and edge data from the frontend.
+
+Calculates:
+
+Number of nodes
+
+Number of edges
+
+DAG validity
+
+Returns results to the frontend for user display.
+
+Tech Stacks
+
+Frontend: React, JavaScript, React Flow, Zustand, HTML, CSS
+
+Backend: Python, FastAPI, Uvicorn
+
+IDE: VSCode
+
+Tools Used
+Resource	Specifications	Quantity	Purpose
+Laptop	macOS, 8GB RAM	1	Development & Testing
+VSCode	Latest Version	1	Code Editing
+Node.js	v18+	1	Frontend Runtime
+Python	3.x	1	Backend Development
+How to Run the Project
+
+Clone the repository:
+
+git clone <repository-url>
+
+
+Navigate to the frontend folder and run:
+
+cd frontend
 npm install
 npm start
 
 
-The frontend will run at:
+Open a new terminal and navigate to the backend folder:
 
-http://localhost:3000
-
-Backend
-cd nodeflow-visual-pipeline/backend
+cd backend
 python -m venv venv
 source venv/bin/activate
 pip install fastapi uvicorn
 uvicorn main:app --reload
 
 
-The backend will run at:
+Open the application in the browser using:
 
-http://127.0.0.1:8000
+http://localhost:3000
 
+License
 
-API documentation is available at:
-
-http://127.0.0.1:8000/docs
-
-Features
-
-Drag-and-drop node-based workflow editor
-
-Reusable node abstraction for creating new nodes easily
-
-Dynamic Text node that generates input handles from {{variables}}
-
-Visual connections between nodes using edges
-
-Backend validation to:
-
-Count number of nodes
-
-Count number of edges
-
-Check whether the pipeline forms a DAG
-
-Simple and professional user interface
-
-Tech Stacks & Libraries
-Frontend
-
-ReactJS
-
-Hyper Text Markup Language (HTML)
-
-Cascading Style Sheets (CSS)
-
-JavaScript
-
-React Flow
-
-Zustand
-
-Backend
-
-Python
-
-FastAPI
-
-Uvicorn
-
-Backend APIs
-/pipelines/parse
-
-This API receives pipeline node and edge data from the frontend and returns analysis results including node count, edge count, and DAG validation.
+This project is licensed under the MIT License.
 
 References
 
