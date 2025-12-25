@@ -1,8 +1,8 @@
 # NodeFlow
 
-# 🚀 NodeFlow – Visual Pipeline Builder
+#  NodeFlow – Visual Pipeline Builder
 
-## 📑 Contents
+##  Contents
 - Introduction  
 - Key Highlights  
 - Pipeline Builder  
@@ -11,12 +11,11 @@
 - Tech Stacks  
 - Tools Used  
 - How to Run the Project  
-- License  
-- References  
+ 
 
 ---
 
-## 🧩 Introduction
+##  Introduction
 
 NodeFlow is a **visual, node-based pipeline builder** that allows users to create workflows using an intuitive **drag-and-drop interface**.  
 The platform enables users to connect different nodes such as **Input, Text Processing, LLM, and Output nodes** to form structured and logical pipelines.
@@ -29,17 +28,17 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## ✨ Key Highlights
+##  Key Highlights
 
-- 🖱️ **Drag-and-Drop Workflow** – Build pipelines visually using nodes and connections  
-- 🔁 **Reusable Node Architecture** – Easily extend and add new node types  
-- 🧠 **Dynamic Text Logic** – Automatically generates input handles from `{{variables}}`  
-- ✅ **Backend Validation** – Counts nodes, edges, and checks DAG correctness  
-- 🎨 **Clean UI** – Simple, professional, and user-friendly interface  
+-  **Drag-and-Drop Workflow** – Build pipelines visually using nodes and connections  
+-  **Reusable Node Architecture** – Easily extend and add new node types  
+-  **Dynamic Text Logic** – Automatically generates input handles from `{{variables}}`  
+-  **Backend Validation** – Counts nodes, edges, and checks DAG correctness  
+-  **Clean UI** – Simple, professional, and user-friendly interface  
 
 ---
 
-## 🛠️ Pipeline Builder
+##  Pipeline Builder
 
 - Visual canvas to place and connect nodes  
 - Supports multiple node types:
@@ -51,7 +50,7 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## 📝 Text Node Logic
+##  Text Node Logic
 
 - Automatically resizes as text content increases  
 - Detects variables written inside `{{ }}`  
@@ -60,7 +59,7 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## 🔍 Backend Validation
+## Backend Validation
 
 - Receives pipeline structure from the frontend  
 - Calculates:
@@ -71,7 +70,7 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## ⚙️ Tech Stacks
+##  Tech Stacks
 
 ### Frontend
 - React  
@@ -91,7 +90,7 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## 🧰 Tools Used
+## Tools Used
 
 | Resource | Specifications | Purpose |
 |--------|----------------|---------|
@@ -102,13 +101,28 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
-### 🔹 Frontend Setup
+###  Frontend Setup
 
-```bash
+
 git clone <repository-url>
 cd nodeflow-visual-pipeline/frontend
 npm install
 npm start
+
+---
+
+# Backend  Setup
+
+cd nodeflow-visual-pipeline/backend
+python -m venv venv
+source venv/bin/activate
+pip install fastapi uvicorn
+uvicorn main:app --reload
+
+
+
+
+
 
