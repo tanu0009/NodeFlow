@@ -106,20 +106,20 @@ This ensures logical correctness and prevents invalid cyclic workflows.
 ###  Frontend Setup
 
 
-git clone <repository-url>
-cd nodeflow-visual-pipeline/frontend
-npm install
-npm start
+- git clone <repository-url>
+- cd nodeflow-visual-pipeline/frontend
+- npm install
+- npm start
 
 ---
 
-# Backend  Setup
+### Backend  Setup
 
-cd nodeflow-visual-pipeline/backend
-python -m venv venv
-source venv/bin/activate
-pip install fastapi uvicorn
-uvicorn main:app --reload
+- cd nodeflow-visual-pipeline/backend
+- python -m venv venv
+- source venv/bin/activate
+- pip install fastapi uvicorn
+- uvicorn main:app --reload
 
 
 
